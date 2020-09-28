@@ -41,9 +41,9 @@ install:
 # make check so that we generate the reports for code coverage analysis.
 
 script:
-  - gcc -g -coverage -o avg-test avg-test.c
+  - gcc -g -coverage -o avg-test avg-test.c ece2400-stdlib.c
   - ./avg-test
-  - gcc -g -coverage -o sort-test sort-test.c
+  - gcc -g -coverage -o sort-test sort-test.c ece2400-stdlib.c
   - ./sort-test
   - lcov --capture --directory . --output-file coverage.info
   - genhtml coverage.info --output-directory coverage-html
